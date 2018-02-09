@@ -24,7 +24,7 @@ public class ShoppingCartTest extends TestMain{
 	{
 		
 		shoppingCart.addTSelectProductTest();
-		//org.junit.Assert.assertArrayEquals(home, actuals);		
+		//org.junit.Assert.assertArrayEquals(source, target);		
 	}
 
 	@After

@@ -22,7 +22,7 @@ public class HomePageTest extends TestMain{
 	{
 		
 		homePage.HomePageSearch();
-		//org.junit.Assert.assertArrayEquals(home, actuals);		
+		//Need to assert this		
 	}
 
 }

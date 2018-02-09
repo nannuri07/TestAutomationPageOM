@@ -24,7 +24,8 @@ public class ProductPageTest extends TestMain{
 	{
 		
 		productPage.SearchPageForProduct();
-		//org.junit.Assert.assertArrayEquals(home, actuals);		
+		//Need to assert the test
+		//org.junit.Assert.assertArrayEquals(sourc, target);		
 	}
 
 }
