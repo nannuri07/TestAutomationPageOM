@@ -7,23 +7,7 @@ import com.automation.testmain.TestMain;
 import com.automation.webpages.HomePage;
 
 public class HomePageTest extends TestMain{
-	
-	HomePage homePage;
-	
-	@Before
-	public void setup()
-	{
-		initial();
-		
-	}
-	
-	@Test 
-	public void homePageSeachTest1()
-	{
-		
-		homePage.HomePageSearch();
-		//Need to assert this		
-	}
+
 
 }
 

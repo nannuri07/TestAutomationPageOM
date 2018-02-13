@@ -11,21 +11,6 @@ import com.automation.webpages.SearchPage;
 public class ProductPageTest extends TestMain{
 	
 	ProductPage productPage;
-	
-	/*@Before
-	public void setup()
-	{
-		initial();
-		
-	}*/
-	
-	@Test
-	public void addToCartPoductTest3()
-	{
-		
-		productPage.SearchPageForProduct();
-		//Need to assert the test
-		//org.junit.Assert.assertArrayEquals(sourc, target);		
-	}
+
 
 }

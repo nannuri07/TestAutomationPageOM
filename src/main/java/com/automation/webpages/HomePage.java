@@ -11,31 +11,5 @@ import com.automation.testmain.TestMain;
 
 public class HomePage extends TestMain {
 
-		@FindBy(id="searchDropdownBox")
-	        WebElement dropBoxText;
-		
-		Select oSelect = new Select(driver.findElement(By.id("searchDropdownBox")));
-		 
-		
-		
-		@FindBy(id="twotabsearchtextbox")
-		WebElement searchTextBox;
-		    	
-
-		@FindBy(className="nav-input")
-		WebElement submitInput;
-
-		public HomePage(){
-			PageFactory.initElements(driver, this);
-		}
-		public SearchPage HomePageSearch(){
-
-			oSelect.selectByVisibleText("Books");
-			dropBoxText.sendKeys("Books");
-			searchTextBox.sendKeys("Nike");
-			submitInput.click();
-			    
-			
-			return new SearchPage();
-		}
+//Need to expand this page
 }

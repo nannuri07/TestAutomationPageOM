@@ -1,30 +1,74 @@
 package com.automation.webpages;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
-import com.automation.testmain.TestMain;
-
-public class SearchPage extends TestMain{
+public class SearchPage {
 	
-	// 4.Find and select the book titled “Shoe Dog” by author “Phil Knight” (need to match by both title and author)
-    @FindBy(partialLinkText="Shoe Dog")
-	WebElement bookTittle;
-
-    @FindBy(linkText="Phil Knight")
-	WebElement authorName;
-  
-   
-	public SearchPage(){
-		PageFactory.initElements(driver, this);
+	WebDriver driver;
+	Select selection;
+	String hard_cover_price;
+	public SearchPage(WebDriver driver)
+	{
+		this.driver = driver;
 	}
-	public ProductPage SearchPageForProduct(){
 
-	    	bookTittle.click();
+	@FindBy(id="searchDropdownBox")
+	WebElement selectElement;
+	
+	@FindBy(id="twotabsearchtextbox")
+	WebElement searchTextBox;
 		
-		    
-		
-		return new ProductPage();
+	@FindBy(className="nav-input")
+	WebElement submit;
+	
+	@FindBy(partialLinkText="Shoe Dog")
+	WebElement bookname;
+	
+	@FindBy(linkText="Phil Knight")
+	WebElement author;
+	
+	@FindBy(xpath="//span[text()='Hardcover']")
+	WebElement hard_cover;
+	
+	@FindBy(id="add-to-cart-button")
+	WebElement add_cart;
+	
+	@FindBy(xpath="//*[@id=\'a-autoid-6-announce\']/span[2]/span")
+	WebElement hard_coverCost;
+	
+	@FindBy(xpath="//span[text()='Cart']")
+	WebElement shopping_cart;
+	
+	@FindBy(xpath="//*[@id='sc-subtotal-amount-activecart']/span")
+	WebElement sub_total;
+
+	public void searchBook(String sel, String searchTBox)
+	{
+		selection = new Select(selectElement);
+		selection.selectByVisibleText(sel);
+		searchTextBox.sendKeys(searchTBox);
+		submit.click();	
+		bookname.click();
 	}
+
+	public String addToCart()
+	{
+	    hard_cover.click();
+	    //need to implement @cache
+	    hard_cover_price = hard_coverCost.getText();
+	    add_cart.click();
+	    return hard_cover_price;
+	}
+	 	
+	public String shoppingCart()
+	{
+
+        shopping_cart.click();
+    	String cart_sub_total = sub_total.getText();
+	   	return cart_sub_total;
+	}
+
 }
