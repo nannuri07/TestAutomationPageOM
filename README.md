@@ -6,8 +6,8 @@ Test scenario covered in this repo:
 1. Launch Chrome
 2. Navigate to www.amazon.com
 3. Select “Books” under search dropdown
-4. Search for “Selenium”
-5. Find and select the book titled “Selenium Testing Tools” by author “Unmesh Gundecha” 
+4. Search for “Nike”
+5. Find and select the book titled “Shoe Dog” by author “Phil Knight” 
 6. In the product page, note the price of Hardcover edition
 7. Add the hardcover version to shopping cart
 8. Navigate to shopping cart
