@@ -21,7 +21,7 @@ public class TestMain {
 		{
 			 System.out.println("ChromeDriver");
 			 // set browser property
-			 System.setProperty("webdriver.chrome.driver", "<chrome driver path>");
+			 System.setProperty("webdriver.chrome.driver", "Set path of chrome driver");
              driver = new ChromeDriver();
 		}
 		else if(browserName.equalsIgnoreCase("IE"))

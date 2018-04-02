@@ -14,21 +14,6 @@ public class SearchPage {
 	{
 		this.driver = driver;
 	}
-
-	@FindBy(id="searchDropdownBox")
-	WebElement selectElement;
-	
-	@FindBy(id="twotabsearchtextbox")
-	WebElement searchTextBox;
-		
-	@FindBy(className="nav-input")
-	WebElement submit;
-	
-	@FindBy(partialLinkText="Shoe Dog")
-	WebElement bookname;
-	
-	@FindBy(linkText="Phil Knight")
-	WebElement author;
 	
 	@FindBy(xpath="//span[text()='Hardcover']")
 	WebElement hard_cover;
@@ -38,21 +23,6 @@ public class SearchPage {
 	
 	@FindBy(xpath="//*[@id=\'a-autoid-6-announce\']/span[2]/span")
 	WebElement hard_coverCost;
-	
-	@FindBy(xpath="//span[text()='Cart']")
-	WebElement shopping_cart;
-	
-	@FindBy(xpath="//*[@id='sc-subtotal-amount-activecart']/span")
-	WebElement sub_total;
-
-	public void searchBook(String sel, String searchTBox)
-	{
-		selection = new Select(selectElement);
-		selection.selectByVisibleText(sel);
-		searchTextBox.sendKeys(searchTBox);
-		submit.click();	
-		bookname.click();
-	}
 
 	public String addToCart()
 	{
@@ -62,13 +32,5 @@ public class SearchPage {
 	    add_cart.click();
 	    return hard_cover_price;
 	}
-	 	
-	public String shoppingCart()
-	{
-
-        shopping_cart.click();
-    	String cart_sub_total = sub_total.getText();
-	   	return cart_sub_total;
-	}
-
+	
 }
